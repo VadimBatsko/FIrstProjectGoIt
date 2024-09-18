@@ -37,23 +37,7 @@ def get_numbers_ticket(min, max, quantity):
 # print(get_numbers_ticket(min=1, max=49, quantity=6))
 
 """Третє завдання
-
-1 зробити чисті номери
-2 перевірити чи є 38 на початку
-3 додати до номерів +38
 """
-
-raw_numbers = [
-    "067\\t123 4567",
-    "(095) 234-5678\\n",
-    "+380 44 123 4567",
-    "380501234567",
-    "    +38(050)123-32-34",
-    "     0503451234",
-    "(050)8889900",
-    "38050-111-22-22",
-    "38050 111 22 11   ",
-]
 
 def clearNumber(list):
     pattern = r"[^\d]"
@@ -72,4 +56,3 @@ def clearNumber(list):
     return newList
 
 
-print(clearNumber(raw_numbers))  
