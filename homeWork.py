@@ -16,7 +16,7 @@ def get_days_from_today(date):
         return print("Шановні! попрошу в форматі (Рік-місяць-день)")
         
 
-print(get_days_from_today("2021.10.09"))
+# print(get_days_from_today("2021.10.09"))
 
 
 """Друге завдання
@@ -26,7 +26,7 @@ print(get_days_from_today("2021.10.09"))
 def get_numbers_ticket(min, max, quantity):
     numberList = set()
 
-    if not (1 <= min <= max <= 1000 and min <= quantity <= max):
+    if not (1 <= min <= max <= 1000):
         return list(numberList)
     else:
         while len(numberList) <= quantity: 
@@ -34,7 +34,7 @@ def get_numbers_ticket(min, max, quantity):
         return sorted(list(numberList))
     
 
-# print(get_numbers_ticket(min=1, max=49, quantity=6))
+print(get_numbers_ticket(min=10, max=20, quantity=5))
 
 """Третє завдання
 """
