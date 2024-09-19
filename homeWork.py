@@ -21,11 +21,6 @@ def get_days_from_today(date):
 def get_numbers_ticket(min, max, quantity):
     numberList = set()
 
-    # Перевірка валідності:
-    #min - не менше 1.
-    #max - не більше 1000.
-    #quantity - значення між min і max.
-
     if not (1 <= min <= max <= 1000 and min <= quantity <= max):
         return list(numberList)
     else:
@@ -39,20 +34,18 @@ def get_numbers_ticket(min, max, quantity):
 """Третє завдання
 """
 
-def clearNumber(list):
+def clearNumber(string):
     pattern = r"[^\d]"
     replacement = ""
-    newList = []
+    newList = ''
+    number = re.sub(pattern, replacement, string)
 
-    for i in list:
-        number = re.sub(pattern, replacement, i)
-
-        if not number.startswith("38"):
-            number = f"+38{number}"
-        else:
-            number = f"+{number}"
-
-        newList.append(number)
+    if not number.startswith("38"):
+        newList = f"+38{number}"
+    else:
+        newList = f"+{number}"
+        
     return newList
 
 
+print(clearNumber("067\\t123 4567"))
