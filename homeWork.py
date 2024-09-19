@@ -16,7 +16,7 @@ def get_days_from_today(date):
         return print("Шановні! попрошу в форматі (Рік-місяць-день)")
         
 
-# print(get_days_from_today("2021.10.09"))
+
 
 
 """Друге завдання
@@ -25,24 +25,26 @@ def get_days_from_today(date):
 
 def get_numbers_ticket(min, max, quantity):
     numberList = set()
-
-    if not (1 <= min <= max <= 1000):
-        return list(numberList)
-    else:
-        while len(numberList) <= quantity: 
-            numberList.add(random.randint(min, max))
-        return sorted(list(numberList))
+    try:
+        if not (1 <= min <= max <= 1000 and (max - min) > quantity >= 0):
+            return print("Некоректні вхідні данні")
+        else:
+            while len(numberList) < quantity: 
+                numberList.add(random.randint(min, max))
+            return sorted(list(numberList))
+    except TypeError:
+        return print("Тип данних невірний")
     
 
-print(get_numbers_ticket(min=10, max=20, quantity=5))
+
 
 """Третє завдання
 """
 
-def clearNumber(string):
+def normalize_phone(phone_number):
     pattern = r"[^\d]"
     replacement = ""
-    number = re.sub(pattern, replacement, string)
+    number = re.sub(pattern, replacement, phone_number)
 
     if not number.startswith("38"):
         newList = f"+38{number}"
@@ -52,4 +54,4 @@ def clearNumber(string):
     return newList
 
 
-# print(clearNumber("067\\t123 4567"))
+
