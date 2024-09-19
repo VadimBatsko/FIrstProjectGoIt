@@ -7,11 +7,16 @@ import re
 Створіть функцію get_days_from_today(date), яка розраховує кількість днів між заданою датою і поточною датою."""
 
 def get_days_from_today(date):
-    date_obj = datetime.strptime(date, "%Y-%m-%d")
-    nowDitetime = datetime.today()
-    return date_obj.toordinal() - nowDitetime.toordinal()
+    
+    try:
+        date_obj = datetime.strptime(date, "%Y-%m-%d")
+        nowDitetime = datetime.today()
+        return date_obj.toordinal() - nowDitetime.toordinal()
+    except ValueError:
+        return print("Шановні! попрошу в форматі (Рік-місяць-день)")
+        
 
-# print(get_days_from_today("2021-10-09"))
+print(get_days_from_today("2021.10.09"))
 
 
 """Друге завдання
@@ -47,4 +52,4 @@ def clearNumber(string):
     return newList
 
 
-print(clearNumber("067\\t123 4567"))
+# print(clearNumber("067\\t123 4567"))
