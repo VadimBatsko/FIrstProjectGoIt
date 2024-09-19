@@ -37,7 +37,6 @@ def get_numbers_ticket(min, max, quantity):
 def clearNumber(string):
     pattern = r"[^\d]"
     replacement = ""
-    newList = ''
     number = re.sub(pattern, replacement, string)
 
     if not number.startswith("38"):
