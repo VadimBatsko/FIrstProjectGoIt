@@ -25,17 +25,15 @@ def get_days_from_today(date):
 
 def get_numbers_ticket(min, max, quantity):
     numberList = set()
-    try:
-        if not (1 <= min <= max <= 1000 and (max - min) > quantity >= 0):
-            return print("Некоректні вхідні данні")
-        else:
-            while len(numberList) < quantity: 
-                numberList.add(random.randint(min, max))
-            return sorted(list(numberList))
-    except TypeError:
-        return print("Тип данних невірний")
-    
 
+    if not (1 <= min <= max <= 1000 and (max - min) >= quantity >= 0):
+        return list(numberList)
+    else:
+        while len(numberList) < quantity: 
+            numberList.add(random.randint(min, max))
+        return sorted(list(numberList))
+    
+print(get_numbers_ticket(10, 15, 5))
 
 
 """Третє завдання
